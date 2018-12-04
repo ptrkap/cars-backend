@@ -11,10 +11,8 @@ public class CarController {
     private CarDAO carDAO;
 
     @PostMapping(value = "add")
-    public void add(@RequestBody String carJson) {
-        // todo: parse car json
-//        Car car = new Ca
-//        System.out.println("add - " + car);
+    public void add(@RequestBody Car car) {
+        carDAO.add(car);
     }
 
     @GetMapping(value = "get")
