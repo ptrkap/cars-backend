@@ -31,7 +31,7 @@ public class CarController {
     }
 
     @DeleteMapping(value = "remove")
-    public void remove(@RequestHeader int id) {
+    public void remove(@RequestHeader(value = "id") int id) {
         carDAO.remove(id);
     }
 }
