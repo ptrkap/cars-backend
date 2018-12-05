@@ -1,10 +1,12 @@
 package com.threexp;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class Utils {
 
     public static int findFirstAvailableId(List<Car> cars) {
+        cars.sort(Comparator.comparingInt(Car::getId));
         int n = cars.size();
         if (n == 0) {
             return 0;

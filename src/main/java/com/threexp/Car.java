@@ -18,6 +18,10 @@ public class Car {
         this.price = price;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public int getId() {
         return id;
     }

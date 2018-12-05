@@ -3,6 +3,7 @@ package com.threexp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import static com.threexp.CarIdAssigner.assignId;
 
 @RestController
 public class CarController {
@@ -12,6 +13,7 @@ public class CarController {
 
     @PostMapping(value = "add")
     public void add(@RequestBody Car car) {
+        assignId(carDAO.getAll(), car);
         carDAO.add(car);
     }
 
