@@ -21,13 +21,15 @@ public class CarController {
     }
 
     @PutMapping(value = "update")
-    public void update(@RequestBody String carJson) {
-        // todo: parse car json
-//        System.out.println("update - " + car);
+    public void update(
+            @RequestHeader(value = "id") int id,
+            @RequestHeader(value = "property") String property,
+            @RequestHeader(value = "value") String value) {
+        carDAO.update(id, property, value);
     }
 
     @DeleteMapping(value = "remove")
     public void remove(@RequestHeader int id) {
-        System.out.println("remove - " + id);
+        carDAO.remove(id);
     }
 }
